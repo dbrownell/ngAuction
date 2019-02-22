@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "nga",
       "schematics": {},
       "architect": {
         "build": {
@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "../node_modules/material-icons/css/material-design-icons.min.css"]
           },
           "configurations": {
             "production": {
@@ -105,7 +108,7 @@
     "ngAuction-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
+      "prefix": "nga",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
