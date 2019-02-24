@@ -61,7 +61,12 @@ const products = [
 ];
 
 export class ProductService {
+  
   getProducts(): Array<Product> {
     return products.map(p => new Product(p.id, p.title, p.price, p.rating, p.description, p.categories));
+  }
+
+  getProductById(productId: number): Product {
+    return products.find(p => p.id === productId);
   }
 }
