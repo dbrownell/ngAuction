@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 export class Product {
   constructor(
     public id: number,
@@ -61,9 +63,11 @@ const products = [
 ];
 
 export class ProductService {
-  
-  getProducts(): Array<Product> {
-    return products.map(p => new Product(p.id, p.title, p.price, p.rating, p.description, p.categories));
+
+  getProducts(): Observable<Product[]> {
+    return of(products.map(p => {
+      return new Product(p.id, p.title, p.price, p.rating, p.description, p.categories);
+    }));
   }
 
   getProductById(productId: number): Product {
